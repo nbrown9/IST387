@@ -38,6 +38,7 @@ row.names(myCars[which.max(myCars$hp*myCars$mpg),])
 which.max(myCars$hp+myCars$mpg)
 # Get the name
 row.names(myCars[which.max(myCars$hp+myCars$mpg),])
+# View table to make sure everything is ok
 
 # Step 4
 
