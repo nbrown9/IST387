@@ -2,7 +2,7 @@
 # Author: Nicholas Brown
 # Assignment: Homework 4
 # Due: 02/08/18
-# Delivered: 02/09/18
+# Delivered: 02/14/18
 
 
 # Part 1
@@ -34,15 +34,30 @@ View(myAQdata)
 #  probability of future draws
 sampleVec <- sample(myAQdata$Wind, size=10)
 
+# Three times
+for (i in 1:3){
+  cat("Round: ", i)
+  sampleVec <- sample(myAQdata$Wind, size=10)
+  cat("\n\n-------------------\n")
+  printVecInfo(sampleVec)
+  cat("\n\n-------------------\n")
+}
+
 # Get random sample vec info
 # This vector wont be the same each time because in R the random generator is 
 #  re-seeded so new random values are selected each time sample() is run.
 printVecInfo(sampleVec)
 
-# Analyze O3 
+# Analyze Ozone, this time eliminating nulls
+myAQdata2 <- airquality[complete.cases(airquality),]
 
-sampleVec2 <- sample(complete.cases(myAQdata$Ozone, "Ozone"), size=10)
-printVecInfo(sampleVec2)
-
+# Three times with ozone
+for (i in 1:3){
+  cat("Round: ", i)
+  sampleVec <- sample(myAQdata2$Ozone, size=10)
+  cat("\n\n-------------------\n")
+  printVecInfo(sampleVec)
+  cat("\n\n-------------------\n")
+}
 
 
