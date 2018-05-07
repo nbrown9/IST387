@@ -95,6 +95,6 @@ myQuery <- sqldf("select COUNT(DAY_OF_WEEK), TRIM(DAY_OF_WEEK) from df group by 
 myQuery[,'COUNT(DAY_OF_WEEK)'] <- as.numeric(myQuery[,'COUNT(DAY_OF_WEEK)']) 
 View(myQuery)
 
-testLabs <-  myQuery[,'DAY_OF_WEEK']
+testLabs <-  myQuery[,'COUNT(DAY_OF_WEEK)']
 
 barplot(myQuery[,'COUNT(DAY_OF_WEEK)'], ylab = 'Accidents', horiz = FALSE, names.arg = testLabs, main = 'Accidents per Weekday')
